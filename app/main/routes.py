@@ -29,6 +29,24 @@ def dashboard():
     print(temp)
     print(hum)
     
-    return render_template('dashboard.html' , temp = temp , hum = hum)
+    print("Fetching last 5 temperature data ....")
+    req_temp = requests.get("https://api.thingspeak.com/channels/1569087/fields/1.json?results=5")
+    ob_temps = json.loads(req_temp.text)
+    feeds = ob_temps['feeds']
+    temp_data = []
+    for i in range(0 , len(feeds)) :
+        temp_data.append([feeds[i]['created_at'] , feeds[i]['field1'] ])
+    print(temp_data)
+    
+    print("Fetching last 5 humidity data ....")
+    req_hum = requests.get("https://api.thingspeak.com/channels/1569087/fields/2.json?results=5")
+    ob_hum = json.loads(req_hum.text)
+    feeds_hum = ob_hum['feeds']
+    hum_data = []
+    for i in range(0 , len(feeds_hum)) :
+        hum_data.append([feeds_hum[i]['created_at'] , feeds_hum[i]['field2'][0:5] ])
+    print(hum_data)
+    
+    return render_template('dashboard.html' , temp = temp , hum = hum , temp_data  = temp_data , hum_data = hum_data)
 
 
