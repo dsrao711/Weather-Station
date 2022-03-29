@@ -1,4 +1,4 @@
-# WeatherStation
+# Weather-Station
 <img width="959" alt="image" src="https://user-images.githubusercontent.com/59830064/160708186-c8189ec8-df0a-4930-b233-9f4c7e5c35e5.png">
 
 ### 📌 Tech stack :
