@@ -1,7 +1,8 @@
-{% extends 'layout.html'%} {% block content %}
+{% extends 'layout.html'%} 
 
-<div class="row">
+{% block content %}
 
+<<<<<<< HEAD
     <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="card card-stats">
             <div class="card-body">
@@ -9,50 +10,63 @@
                     <div class="col-5 col-md-4">
                         <div class="icon-big text-center icon-warning">
                             <i class="fas fa-temperature-low"></i>
+=======
+    <div class="row">
+
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-5 col-md-4">
+                            <div class="icon-big text-center icon-warning">
+                                <i class="fas fa-temperature-low"></i>
+                            </div>
+>>>>>>> c5b57e1dcb31f6e43fa1f438e98ff7b738d71209
+                        </div>
+                        <div class="col-7 col-md-8">
+                            <div class="numbers">
+                                <p class="card-category">Temperature</p>
+                                <p class="card-title">{{ temp }}
+                                    <p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-7 col-md-8">
-                        <div class="numbers">
-                            <p class="card-category">Temperature</p>
-                            <p class="card-title">{{ temp }}
-                                <p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-5 col-md-4">
+                            <div class="icon-big text-center icon-warning">
+                                <i class="fas fa-water"></i>
+                            </div>
+                        </div>
+                        <div class="col-7 col-md-8">
+                            <div class="numbers">
+                                <p class="card-category">Humidity</p>
+                                <p class="card-title">{{ hum }}
+                                    <p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
 
-    <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="card card-stats">
-            <div class="card-body ">
-                <div class="row">
-                    <div class="col-5 col-md-4">
-                        <div class="icon-big text-center icon-warning">
-                            <i class="fas fa-water"></i>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-5 col-md-4">
+                            <div class="icon-big text-center icon-warning">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-7 col-md-8">
-                        <div class="numbers">
-                            <p class="card-category">Humidity</p>
-                            <p class="card-title">{{ hum }}
-                                <p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="card card-stats">
-            <div class="card-body ">
-                <div class="row">
-                    <div class="col-5 col-md-4">
-                        <div class="icon-big text-center icon-warning">
-                            <i class="fas fa-tachometer-alt"></i>
-                        </div>
+<<<<<<< HEAD
                     </div>
                     <div class="col-7 col-md-8">
                         <div class="numbers">
@@ -60,53 +74,82 @@
                             <p style="color: black; font-size: 20px">{{ rain }}</p>
                             <p style="color: grey; font-size: 12px">{{ rain_message }}
                                 <p>
+=======
+                        <div class="col-7 col-md-8">
+                            <div class="numbers">
+                                <p class="card-category">Rain Sensor</p>
+                                <p class="card-title">{{ rain }}
+                                    <p>
+                            </div>
+>>>>>>> c5b57e1dcb31f6e43fa1f438e98ff7b738d71209
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="card card-stats">
-            <div class="card-body ">
-                <div class="row">
-                    <div class="col-5 col-md-4">
-                        <div class="icon-big text-center icon-warning">
-                            <i class="fas fa-tachometer-alt"></i>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-5 col-md-4">
+                            <div class="icon-big text-center icon-warning">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
                         </div>
+<<<<<<< HEAD
                     </div>
                     <div class="col-7 col-md-8">
                         <div class="numbers">
                             <p class="card-category">Weather</p>
                             <p class="card-category" style="color: black; font-size: 20px">{{ message }}</p>
+=======
+                        <div class="col-7 col-md-8">
+                            <div class="numbers">
+                                <p class="card-category">Weather</p>
+                                <p class="card-category" style="color: black; font-size: 20px">Pleasant</p>
+                            </div>
+>>>>>>> c5b57e1dcb31f6e43fa1f438e98ff7b738d71209
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
-</div>
+    <div style="display: none;" data-graph="{{ graph }}" id="graphData"></div>
 
-<div class="row">
-    <div class="col-lg-6 col-md-12 col-sm-12">
-        <div class="card card-stats">
-            <div class="card-body ">
-                <canvas id="speedChart" width="400" height="100"></canvas>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card card-stats">
+                <div class="card-body ">
+                    <div id="weatherChart" width="400" height="100"></div>
+                </div>
             </div>
         </div>
+        <!-- <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="card card-stats">
+                <div class="card-body ">
+                    <div id="humidityChart" width="400" height="100"></div>
+                </div>
+            </div>
+        </div> -->
     </div>
-    <div class="col-lg-6 col-md-12 col-sm-12">
-        <div class="card card-stats">
-            <div class="card-body ">
-                <canvas id="speedChart" width="400" height="100"></canvas>
+
+    <!-- <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="card card-stats">
+                <div class="card-body ">
+                    <div id="rainChart" width="400" height="100"></div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<div>
-
-</div>
+    </div> -->
 
 {% endblock content %}
+
+{% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="/static/js/main.js"></script>
+{% endblock js %}
