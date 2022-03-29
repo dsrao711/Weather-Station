@@ -18,6 +18,12 @@ def dashboard():
     print(temp)
     print(hum)
     print(rain)
+    message = "Pleasant"
+    rain_message = "No rain"
+    if(float(temp) >= 30.00):
+        message = "Hot"
+    if(float(rain) <= 30.00):
+        rain_message = "Expecting shower"
     
     # Graphs
     print("Fetching last 5 temperature data ....")
@@ -47,7 +53,7 @@ def dashboard():
     # with open("temp.html", "w") as f:
     #     f.write(graph1.text)
 
-    return render_template('dashboard.html' , temp = temp , hum = hum , rain = rain , labels = temp_labels , values = temp_values )
+    return render_template('dashboard.html' , temp = temp , hum = hum , rain = rain , labels = temp_labels , values = temp_values , message = message , rain_message = rain_message )
 
 
 bp.route("/graphs")
