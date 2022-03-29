@@ -1,13 +1,14 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 
 
-import os
+def create_app():
+    app = Flask(__name__, static_folder='static')
 
-app = Flask(__name__ , static_folder='static')
+    # Registering blueprints
+    from app.main.routes import bp as main_blueprint
+    from app.prediction.routes import bp as predict_blueprint
 
-from app.main.routes import bp as main_blueprint
-from app.prediction.routes import bp as predict_blueprint
+    app.register_blueprint(main_blueprint)
+    app.register_blueprint(predict_blueprint)
 
-app.register_blueprint(main_blueprint)
-app.register_blueprint(predict_blueprint)
+    return app
